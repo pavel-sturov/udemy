@@ -1,0 +1,15 @@
+body{
+    background-color: rgb(177, 206, 206);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(54, 40, 40);
+    margin: 100px;
+}
+div{
+    font-size: 30px;
+    display: inline-block;
+    margin: 20px;
+    border: 1px solid rgb(97, 40, 89);
+    top: 100px;
+    color: rgb(114, 80, 69);
+
+}
