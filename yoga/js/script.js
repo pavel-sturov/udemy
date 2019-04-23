@@ -88,3 +88,30 @@ function setClock(id, endTime) {
 }
 
 setClock('timer', weddingDate);
+
+let more = document.querySelector('.more');
+let close = document.querySelector('.popup-close');
+let overlay = document.querySelector('.overlay');
+
+more.addEventListener('click', function () {
+    overlay.style.display = 'block';
+    this.classList.add('more-splash');
+    document.body.style.overflow = 'hidden';
+});
+
+close.addEventListener('click', function () {
+    overlay.style.display = 'none';
+    more.classList.remove('more-splash');
+    document.body.style.overflow = '';
+});
+
+let allInfo = document.querySelector('.info');
+
+allInfo.addEventListener('click', function (e) {
+    if (e.target && e.target.classList.contains('description-btn')) {
+        overlay.style.display = 'block';
+        more.classList.add('more-splash');
+        document.body.style.overflow = 'hidden';
+    }
+});
+

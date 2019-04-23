@@ -17,27 +17,47 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="684">
-              <caret line="107" column="38" selection-start-line="107" selection-start-column="33" selection-end-line="107" selection-end-column="38" />
+            <state relative-caret-position="923">
+              <caret line="232" column="40" lean-forward="true" selection-start-line="232" selection-start-column="4" selection-end-line="232" selection-end-column="40" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="script.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/script.js">
+      <file leaf-file-name="hw11.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../home-work-11/hw11.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+            <state relative-caret-position="189">
+              <caret line="7" column="36" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hw11.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../home-work-11/hw11.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="10" column="7" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>mor</find>
+      <find>close</find>
+      <find>узна</find>
+    </findStrings>
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/js/script.js" />
+        <option value="$PROJECT_DIR$/js/hw11.html" />
+        <option value="$PROJECT_DIR$/js/hw11.js" />
+        <option value="$PROJECT_DIR$/../home-work-11/hw11.html" />
+        <option value="$PROJECT_DIR$/../home-work-11/hw11.js" />
       </list>
     </option>
   </component>
@@ -50,9 +70,9 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
-    <option name="width" value="1468" />
+    <option name="width" value="1475" />
     <option name="height" value="1344" />
   </component>
   <component name="ProjectView">
@@ -68,11 +88,6 @@
               <item name="yoga" type="b2602c69:ProjectViewProjectNode" />
               <item name="yoga" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="yoga" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yoga" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -85,6 +100,11 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../home-work-11" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -109,18 +129,19 @@
       <option name="presentableId" value="Default" />
       <updated>1555768068583</updated>
       <workItem from="1555768072650" duration="3915000" />
-      <workItem from="1555928583557" duration="1078000" />
+      <workItem from="1555928583557" duration="1231000" />
+      <workItem from="1555950395539" duration="5055000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4993000" />
+    <option name="totallyTimeSpent" value="10201000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1468" height="1344" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="804" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.24464409" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.24947146" />
       <window_info anchor="bottom" id="TODO" order="10" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
@@ -148,6 +169,20 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2889">
+          <caret line="107" column="38" selection-start-line="107" selection-start-column="33" selection-end-line="107" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1242">
+          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1242">
           <caret line="46" column="47" lean-forward="true" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="47" />
         </state>
@@ -163,17 +198,41 @@
     <entry file="file://$PROJECT_DIR$/icons/left-arrow.svg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="107" column="38" selection-start-line="107" selection-start-column="33" selection-end-line="107" selection-end-column="38" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/../../alex-and-paul/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/js/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+        <state relative-caret-position="383">
+          <caret line="92" column="51" lean-forward="true" selection-start-line="92" selection-start-column="51" selection-end-line="92" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/hw11.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="27" lean-forward="true" selection-start-column="27" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../home-work-11/hw11.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="10" column="7" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="923">
+          <caret line="232" column="40" lean-forward="true" selection-start-line="232" selection-start-column="4" selection-end-line="232" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../home-work-11/hw11.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="7" column="36" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="36" />
         </state>
       </provider>
     </entry>
