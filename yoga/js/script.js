@@ -114,4 +114,71 @@ allInfo.addEventListener('click', function (e) {
         document.body.style.overflow = 'hidden';
     }
 });
+    // Form
+
+    let messange = {
+        loading: 'Загрузка...',
+        success: 'Спасибо, мы свяжемся с вами!',
+        fail: 'Что-то пошло не так!'
+    };
+
+    let form = document.querySelector('.main-form'),
+        input = form.getElementsByTagName('input'),
+        statusMessage = document.createElement('div');
+
+        statusMessage.classList.add('status');
+        
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+            form.appendChild(statusMessage);
+
+            let request = new XMLHttpRequest();
+            request.open('POST', 'server.php');
+            request.setRequestHeader ('Content-Type', 'application/x-www-form-urlencoded');
+
+            let formData = new FormData(form);
+            request.send(formData);
+
+            request.addEventListener('readystatechange', function () {
+               if (request.readyState < 4) {
+                   statusMessage.innerHTML = messange.loading;
+               } else if (request.readyState === 4 && request.status == 200) {
+                   statusMessage.innerHTML = messange.success;
+               } else {
+                   statusMessage.innerHTML = messange.fail;
+               }
+            });
+            for (let i = 0; i < input.length; i++) {
+                input[i].value = '';
+                close.addEventListener('click', function () {
+                    statusMessage.innerHTML = '';
+                })
+            }
+        });
+
+        //
+
+let contactForm = document.getElementById('form'),
+    contactInputs = contactForm.getElementsByTagName('input');
+
+contactForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    contactForm.appendChild(statusMessage);
+
+    let req = new XMLHttpRequest();
+    req.open('POST', 'server.php');
+    req.setRequestHeader ('Content-Type', 'application/x-www-form-urlencoded');
+
+    let fD = new FormData();
+    req.send(fD);
+
+    req.addEventListener('readystatechange', function () {
+        if (req.readyState === 4 && req.status == 200) {
+            statusMessage.innerHTML = messange.success;
+            statusMessage.style.color = 'white';
+        }
+    })
+});
+
+
 
