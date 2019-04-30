@@ -37,6 +37,8 @@ let info = document.querySelector('.info-header');
 
 hideAndShowTabs(tab, tabContent, info);
 
+// timer
+
 let weddingDate = '2019-05-25';
 
 function getTimeToWedding(wedDate) {
@@ -114,9 +116,9 @@ allInfo.addEventListener('click', function (e) {
         document.body.style.overflow = 'hidden';
     }
 });
-    // Form
+    // form
 
-    let messange = {
+    let message = {
         loading: 'Загрузка...',
         success: 'Спасибо, мы свяжемся с вами!',
         fail: 'Что-то пошло не так!'
@@ -125,38 +127,44 @@ allInfo.addEventListener('click', function (e) {
     let form = document.querySelector('.main-form'),
         input = form.getElementsByTagName('input'),
         statusMessage = document.createElement('div');
-
         statusMessage.classList.add('status');
-        
-        form.addEventListener('submit', function (event) {
-            event.preventDefault();
-            form.appendChild(statusMessage);
 
+        form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        form.appendChild(statusMessage);
+        return new Promise(function (resolve, reject) {
             let request = new XMLHttpRequest();
             request.open('POST', 'server.php');
-            request.setRequestHeader ('Content-Type', 'application/x-www-form-urlencoded');
+            request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
             let formData = new FormData(form);
-            request.send(formData);
 
-            request.addEventListener('readystatechange', function () {
-               if (request.readyState < 4) {
-                   statusMessage.innerHTML = messange.loading;
-               } else if (request.readyState === 4 && request.status == 200) {
-                   statusMessage.innerHTML = messange.success;
-               } else {
-                   statusMessage.innerHTML = messange.fail;
-               }
+            request.onreadystatechange = () => {
+                if (request.readyState < 4 && request.status === 200) {
+                    resolve(statusMessage.innerHTML = message.loading);
+                } else if (request.readyState === 4 && request.status === 200) {
+                    resolve(statusMessage.innerHTML = message.success);
+                } else if(request.status !== 200){
+                    reject();
+                }
+            };
+            request.send(formData);
+            close.addEventListener('click', function () {
+                statusMessage.innerHTML = '';
+            })
+        })
+
+            .then()
+            .then()
+            .catch(() =>  statusMessage.innerHTML = message.fail)
+            .then(() => {
+                for (let i = 0; i < input.length; i++) {
+                    input[i].value = '';
+                }
             });
-            for (let i = 0; i < input.length; i++) {
-                input[i].value = '';
-                close.addEventListener('click', function () {
-                    statusMessage.innerHTML = '';
-                })
-            }
         });
 
-        //
+        //down form
 
 let contactForm = document.getElementById('form'),
     contactInputs = contactForm.getElementsByTagName('input');
@@ -165,20 +173,109 @@ contactForm.addEventListener('submit', function (e) {
     e.preventDefault();
     contactForm.appendChild(statusMessage);
 
-    let req = new XMLHttpRequest();
-    req.open('POST', 'server.php');
-    req.setRequestHeader ('Content-Type', 'application/x-www-form-urlencoded');
+    return new Promise(function (resolve, reject) {
+    let xhr = new XMLHttpRequest();
+    xhr.open('POST', 'server.php');
+    xhr.setRequestHeader ('Content-Type', 'application/x-www-form-urlencoded');
 
-    let fD = new FormData();
-    req.send(fD);
+    let fD = new FormData(contactForm);
 
-    req.addEventListener('readystatechange', function () {
-        if (req.readyState === 4 && req.status == 200) {
-            statusMessage.innerHTML = messange.success;
-            statusMessage.style.color = 'white';
+        xhr.onreadystatechange = () => {
+            if (xhr.readyState !== 4) {
+                return;
+            }
+            xhr.status === 200 ? resolve() : reject();
+        };
+        xhr.send(fD);
+        })
+
+    .then(() => {
+        statusMessage.innerHTML = message.success;
+        statusMessage.style.color = 'white';
+        for (let i = 0; i < contactInputs.length; i++) {
+            contactInputs[i].value = '';
         }
     })
+        .catch(() => alert('error'));
 });
 
+// slider
 
+let slideIndex = 1,
+    slides = document.querySelectorAll('.slider-item'),
+    prev = document.querySelector('.prev'),
+    next = document.querySelector('.next'),
+    dotsWrap = document.querySelector('.slider-dots'),
+    dots = document.querySelectorAll('.dot');
 
+showSlides(slideIndex);
+
+function showSlides (n) {
+    if (slideIndex > slides.length){
+        slideIndex = 1;
+    }
+    if (slideIndex < 1){
+        slideIndex = slides.length;
+    }
+    slides.forEach((e) => e.style.display = 'none');
+    dots.forEach((e) => e.classList.remove('dot-active'));
+    slides[slideIndex - 1].style.display = 'block';
+    dots[slideIndex - 1].classList.add('dot-active');
+}
+
+next.addEventListener('click', () => {
+    showSlides(slideIndex++)
+});
+prev.addEventListener('click', () => {
+    showSlides(slideIndex--)
+});
+
+function currentSlide (n) {
+    showSlides(slideIndex = n);
+}
+
+dotsWrap.addEventListener('click', (element) => {
+    for (let i = 0; i <= dots.length; i ++){
+        if (element.target.classList.contains('dot') && element.target === dots[i - 1]){
+            currentSlide(i);
+        }
+    }
+});
+
+// calculator
+
+let persons = document.querySelectorAll('.counter-block-input')[0],
+    restDays = document.querySelectorAll('.counter-block-input')[1],
+    place = document.getElementById('select'),
+    totalValue = document.getElementById('total'),
+    personsSum = 0,
+    daysSum = 0,
+    total = 0;
+
+totalValue.innerHTML = 0;
+
+persons.addEventListener('change', function () {
+    personsSum = +this.value;
+    calc();
+
+});
+console.log(personsSum);
+restDays.addEventListener('change', function () {
+    daysSum = +this.value;
+    calc();
+});
+
+function calc () {
+    if (persons.value <= 0 || restDays.value <= 0){
+        totalValue.innerHTML = '0';
+    } else {
+        total = (daysSum + personsSum) * 4000;
+        totalValue.innerHTML = total;
+        return total;
+    }
+}
+
+place.addEventListener('change', function () {
+    let temp = calc();
+        totalValue.innerHTML = temp * this.options[this.selectedIndex].value;
+});
